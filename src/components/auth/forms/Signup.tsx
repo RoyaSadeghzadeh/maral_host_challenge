@@ -8,6 +8,7 @@ import {
   Link,
   Text,
 } from "@/components";
+import { ROOT_PATHS } from "@/utils/path";
 import { Fragment } from "react";
 
 export const SignupForm = () => {
@@ -88,12 +89,12 @@ export const SignupForm = () => {
         </Link>
       </Box>
       <Box className="flex flex-col gap-6">
-        <Link href="/auth/verification">
+        <Link href={ROOT_PATHS.auth.verification}>
           <Button>Sign Up</Button>
         </Link>
         <Text className=" !text-lg !text-typograhy-1 text-left flex items-center gap-2">
           Already have an account?
-          <Link className="!text-lg" href="/auth/login">
+          <Link className="!text-lg" href={ROOT_PATHS.auth.login}>
             Sign In
           </Link>
         </Text>

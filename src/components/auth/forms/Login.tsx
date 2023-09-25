@@ -9,9 +9,9 @@ import {
   Text,
 } from "@/components";
 import { Fragment } from "react";
+import { ROOT_PATHS } from "../../../utils/path";
 
 export const LoginForm = () => {
-
   const loginBouttons = [
     {
       text: "Sign in with Google",
@@ -22,7 +22,7 @@ export const LoginForm = () => {
       startIcon: GithubIcon,
     },
   ];
-  
+
   const formInputs = [
     {
       lable: "Email",
@@ -77,12 +77,12 @@ export const LoginForm = () => {
         <Link href="">Forgot Password</Link>
       </Box>
       <Box className="flex flex-col gap-6">
-        <Link href="/landing/dashboard">
+        <Link href={ROOT_PATHS.landing.dashboard}>
           <Button>Login</Button>
         </Link>
         <Text className=" !text-lg !text-typograhy-1 text-center flex items-center gap-2">
           Not registered yet?
-          <Link className="!text-lg" href="/auth/signup">
+          <Link className="!text-lg" href={ROOT_PATHS.auth.signup}>
             Create an Account
           </Link>
         </Text>

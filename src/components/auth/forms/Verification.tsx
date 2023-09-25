@@ -1,12 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
-import {
-  Box,
-  Button,
-  Heading,
-  Input,
-  Link,
-  Text,
-} from "@/components";
+import { Box, Button, Heading, Input, Link, Text } from "@/components";
+import { ROOT_PATHS } from "@/utils/path";
 import { Fragment } from "react";
 
 export const VerificationForm = () => {
@@ -33,7 +27,9 @@ export const VerificationForm = () => {
       </Box>
 
       <Box className="flex flex-col gap-6">
-        <Button>Verify my account</Button>
+        <Link href={ROOT_PATHS.landing.dashboard}>
+          <Button>Verify my account</Button>
+        </Link>
         <Text className=" !text-lg !text-typograhy-3 text-center flex items-center gap-2">
           Haven't received it?
           <Link className=" !text-lg" href="">

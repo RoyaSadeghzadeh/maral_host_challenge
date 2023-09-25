@@ -1,4 +1,5 @@
 "use client";
+import { Fragment } from "react";
 //assets
 import { SmartKeyIcon } from "@/assets";
 
@@ -12,6 +13,7 @@ import {
   SSO,
   Verification,
 } from "@/components";
+import { ROOT_PATHS } from "@/utils/path";
 import Link from "next/link";
 
 //nextjs
@@ -54,10 +56,10 @@ export default function Home() {
               formType && (
                 <>
                   {AUTH_FORMS.map((form, index) => (
-                    <>
+                    <Fragment key={index}>
                       {form.route.includes(formType.toString()) &&
                         form.component}
-                    </>
+                    </Fragment>
                   ))}
                 </>
               )
@@ -66,7 +68,7 @@ export default function Home() {
           {
             // for show just when login form is active
             formType && formType.includes("login") && (
-              <Link className="block w-full" href="/auth/sso">
+              <Link className="block w-full" href={ROOT_PATHS.auth.sso}>
                 <Button
                   className="!border-[2px] !border-neutrals-6 !bg-transparent !text-typograhy-1"
                   startIcon={SmartKeyIcon}>

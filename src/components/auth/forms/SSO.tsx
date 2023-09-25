@@ -1,14 +1,7 @@
 import { SmartKeyIcon } from "@/assets";
-import {
-  Box,
-  Button,
-  Checkbox,
-  Heading,
-  Input,
-  Link,
-  Text,
-} from "@/components";
+import { Box, Button, Heading, Input, Link, Text } from "@/components";
 import { Fragment } from "react";
+import { ROOT_PATHS } from "@/utils/path";
 
 export const SSOForm = () => {
   const formInputs = [
@@ -36,12 +29,12 @@ export const SSOForm = () => {
         ))}
       </Box>
       <Box className="flex flex-col gap-6">
-        <Link href="/landing/dasboard">
+        <Link href={ROOT_PATHS.landing.dashboard}>
           <Button>Continue</Button>
         </Link>
         <Text className=" !text-lg !text-typograhy-1 text-center flex items-center gap-2">
           Want to use another account?
-          <Link className="!text-lg" href="/auth/login">
+          <Link className="!text-lg" href={ROOT_PATHS.auth.login}>
             Login Here
           </Link>
         </Text>
