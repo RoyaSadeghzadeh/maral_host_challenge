@@ -24,7 +24,7 @@ export const Navbar = () => {
     {
       title: "Dashboard",
       icon: DashboardIcon,
-      link: "/main",
+      link: "/dashboard",
     },
     {
       title: "Billing",
